@@ -131,17 +131,14 @@ ul { list-style: none; }
 .car-dot { width: 8px; height: 8px; border-radius: 50%; border: 0; background: var(--line); cursor: pointer; padding: 0; transition: all 0.3s var(--ease); }
 .car-dot.active { background: var(--gold); width: 24px; border-radius: 8px; }
 
-/* ---------- Availability panel ---------- */
-.avail-panel { margin-top: 50px; background: var(--ivory); border: 1px solid var(--line); padding: 34px; }
-.avail-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
-.avail-title h3 { font-family: var(--font-serif); font-size: 1.7rem; color: var(--green-900); font-weight: 500; }
-.avail-close { background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--ink-soft); cursor: pointer; }
-.avail-close:hover { color: var(--gold); }
-.avail-grid { display: grid; gap: 26px; }
-.avail-item { border: 1px solid var(--line); padding: 18px; }
-.avail-item.highlight { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
-.avail-name { display: block; font-family: var(--font-serif); font-size: 1.3rem; color: var(--green-900); margin-bottom: 12px; font-weight: 500; }
-.avail-item .bentral-widget, .bentral-widget.prices, .book-widget { min-height: 80px; }
+/* ---------- Availability carousel ---------- */
+.carousel-avail { margin-top: 60px; }
+.avail-card { flex: 0 0 380px; scroll-snap-align: start; background: var(--ivory); border: 1px solid var(--line); padding: 24px; display: flex; flex-direction: column; min-height: 430px; transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
+.avail-card.highlight { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 8px 30px rgba(179,146,44,0.18); }
+.avail-name { font-family: var(--font-serif); font-size: 1.4rem; color: var(--green-900); margin-bottom: 14px; font-weight: 500; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.avail-card .bentral-widget { flex: 1; min-height: 240px; }
+.avail-card .bentral-widget, .bentral-widget.prices, .book-widget { min-height: 80px; }
+.btn-full { width: 100%; text-align: center; margin-top: 18px; }
 
 /* ---------- Offers ---------- */
 .offers .bentral-widget.prices { background: var(--ivory); border: 1px solid var(--line); padding: 30px; margin-top: 40px; }
@@ -203,6 +200,7 @@ ul { list-style: none; }
     .car-arrow.prev { left: 2px; }
     .car-arrow.next { right: 2px; }
     .suite-card { flex-basis: 290px; }
+    .avail-card { flex-basis: 300px; }
 }
 @media (max-width: 560px) {
     .section { padding: 78px 0; }

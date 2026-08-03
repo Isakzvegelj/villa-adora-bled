@@ -150,7 +150,7 @@
     <section class="section suites" id="suites">
         <div class="container">
             <p class="kicker">SUITES</p>
-            <h2 class="serif-title">Seven luxury <em>suites</em></h2>
+            <h2 class="serif-title">Eight luxury <em>suites</em></h2>
             <p class="lead center">Elegant suites with views overlooking the beautiful Lake Bled and its sights. Check live availability and book directly &mdash; best rates, no booking fees.</p>
 
             <div class="carousel">
@@ -260,39 +260,75 @@
                         </div>
                     </div>
 
+                    <div class="suite-card" data-room="island">
+                        <div class="suite-imgwrap"><img src="assets/images/real/suite-terrace.webp" alt="Island Suite views of Bled Island" loading="lazy" decoding="async"><span class="suite-badge">Island View</span></div>
+                        <div class="suite-body">
+                            <h3>Island Suite</h3>
+                            <p class="suite-meta">65 m&sup2; &middot; 2 balconies &middot; Sleeps 4</p>
+                            <p class="suite-desc">A stylish first-floor suite offering stunning views of the lake and Bled Island, with two bedrooms and two balconies.</p>
+                            <ul class="suite-features"><li>2 bedrooms</li><li>2 balconies</li><li>Island view</li><li>Sleeps 4</li></ul>
+                            <div class="suite-actions">
+                                <button type="button" class="btn-avail" data-room="island">Check Availability</button>
+                                <a href="#book" class="btn btn-solid btn-sm">Book</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div><!--/.carousel-track-->
                 <div class="car-dots" aria-hidden="true"></div>
             </div>
 
-            <!-- Availability calendars (per suite, Bentral live) -->
-            <div class="avail-panel" id="availPanel" hidden>
-                <div class="avail-title">
-                    <h3>Live Availability</h3>
-                    <button type="button" class="avail-close" id="availClose" aria-label="Close calendar">&times;</button>
-                </div>
-                <div class="avail-grid">
-                    <div class="avail-item" data-room="princess"><span class="avail-name">Princess Suite</span>
+            <!-- Availability calendars (per suite, Bentral live) in a carousel like the suites -->
+            <div class="carousel carousel-avail" id="availCarousel">
+                <button type="button" class="car-arrow prev" aria-label="Previous suite availability">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button type="button" class="car-arrow next" aria-label="Next suite availability">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <div class="carousel-track">
+                    <div class="avail-card" data-room="princess">
+                        <h4 class="avail-name">Princess Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e44634d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="luxury"><span class="avail-name">Luxury Suite</span>
+                    <div class="avail-card" data-room="luxury">
+                        <h4 class="avail-name">Luxury Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e44674d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="penthouse"><span class="avail-name">Penthouse Suite</span>
+                    <div class="avail-card" data-room="penthouse">
+                        <h4 class="avail-name">Penthouse Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e446b4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="swan"><span class="avail-name">Swan Suite</span>
+                    <div class="avail-card" data-room="swan">
+                        <h4 class="avail-name">Swan Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54494d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="superior"><span class="avail-name">Superior Suite</span>
+                    <div class="avail-card" data-room="superior">
+                        <h4 class="avail-name">Superior Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e544d4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="prestige"><span class="avail-name">Prestige Suite</span>
+                    <div class="avail-card" data-room="prestige">
+                        <h4 class="avail-name">Prestige Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54454d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                    <div class="avail-item" data-room="deluxe"><span class="avail-name">Deluxe Suite</span>
+                    <div class="avail-card" data-room="deluxe">
+                        <h4 class="avail-name">Deluxe Suite</h4>
                         <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54514d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
-                </div>
+                    <div class="avail-card" data-room="island">
+                        <h4 class="avail-name">Island Suite</h4>
+                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54414d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
+                    </div>
+                </div><!--/.carousel-track-->
+                <div class="car-dots" aria-hidden="true"></div>
             </div>
         </div>
     </section>
