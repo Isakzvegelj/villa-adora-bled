@@ -155,21 +155,21 @@ ul { list-style: none; }
 /* ---------- Dining & Activities ---------- */
 .dining { background: var(--ivory); }
 .dining .lead.center { color: var(--ink-soft); }
-.dine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
-.dine-card { background: var(--cream-2); border: 1px solid var(--line); padding: 42px 40px; display: flex; flex-direction: column; }
+.dine-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 56px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.dine-card { background: var(--cream-2); border: 1px solid var(--line); padding: 42px 40px; display: flex; flex-direction: column; text-align: center; align-items: center; }
 .dine-card h3 { font-family: var(--font-serif); font-size: 1.7rem; color: var(--green-900); margin-bottom: 14px; font-weight: 500; }
-.dine-card > p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 24px; }
-.dine-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; }
+.dine-card > p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 24px; max-width: 560px; }
+.dine-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; justify-content: center; }
 .dine-actions .btn-avail { display: inline-block; text-decoration: none; }
-.restaurant-form { display: none; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.restaurant-form { display: none; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); width: 100%; text-align: left; }
 .restaurant-form.show { display: block; }
-.restaurant-form h4 { font-family: var(--font-serif); font-size: 1.35rem; color: var(--green-900); margin-bottom: 6px; font-weight: 500; }
-.restaurant-form .rf-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 14px; }
+.restaurant-form h4 { font-family: var(--font-serif); font-size: 1.35rem; color: var(--green-900); margin-bottom: 6px; font-weight: 500; text-align: center; }
+.restaurant-form .rf-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 14px; text-align: center; }
 .rf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
 .rf-grid input, .rf-grid select, .rf-grid textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); background: var(--ivory); font-family: var(--font-sans); font-size: 0.9rem; color: var(--ink); }
 .rf-grid input:focus, .rf-grid select:focus, .rf-grid textarea:focus { outline: none; border-color: var(--gold); }
 .rf-grid textarea { grid-column: 1 / -1; resize: vertical; }
-.rf-actions { margin-top: 16px; }
+.rf-actions { margin-top: 16px; display: flex; justify-content: center; }
 .rf-actions .btn { width: 100%; text-align: center; }
 
 /* ---------- Location ---------- */
