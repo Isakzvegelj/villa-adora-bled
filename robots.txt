@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /assets/
+Allow: /
+
+Sitemap: https://isakzvegelj.github.io/villa-adora-bled/sitemap.xml

@@ -1,0 +1,7 @@
+# robots.txt for Villa Adora Bled
+# https://isakzvegelj.github.io/villa-adora-website/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://isakzvegelj.github.io/villa-adora-website/sitemap.xml
