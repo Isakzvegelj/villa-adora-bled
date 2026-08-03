@@ -116,4 +116,36 @@
       }
     });
   });
+
+  // ---------- Dinner table reservation form ----------
+  var restToggle = document.getElementById('restaurantToggle');
+  var restFormWrap = document.getElementById('restaurantForm');
+  if (restToggle && restFormWrap) {
+    restToggle.addEventListener('click', function () {
+      restFormWrap.classList.toggle('show');
+      restToggle.textContent = restFormWrap.classList.contains('show') ? 'Close Form' : 'Reserve a Table';
+    });
+  }
+  var restForm = document.getElementById('restaurantReservationForm');
+  if (restForm) {
+    restForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('rfName').value.trim();
+      var email = document.getElementById('rfEmail').value.trim();
+      var date = document.getElementById('rfDate').value;
+      var time = document.getElementById('rfTime').value;
+      var guests = document.getElementById('rfGuests').value;
+      var note = document.getElementById('rfNote').value.trim();
+      if (!name || !email || !date) return;
+      var subject = 'Dinner reservation - ' + name + ' - ' + date + ' ' + time + ' - ' + guests;
+      var body = 'Name: ' + name + '\nEmail: ' + email + '\nDate: ' + date + '\nTime: ' + time + '\nGuests: ' + guests + '\nNote: ' + (note || '-');
+      window.location.href = 'mailto:evita.vilebled@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var ok = document.createElement('p');
+      ok.className = 'rf-note';
+      ok.style.color = 'var(--green-600)';
+      ok.textContent = 'Your email app opened with the reservation pre-filled — we will confirm by email or phone.';
+      restForm.appendChild(ok);
+      restForm.reset();
+    });
+  }
 })();
