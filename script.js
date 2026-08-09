@@ -122,12 +122,15 @@
   var restFormWrap = document.getElementById('restaurantForm');
   if (restToggle && restFormWrap) {
     restToggle.addEventListener('click', function () {
-      restFormWrap.classList.toggle('show');
-      restToggle.textContent = restFormWrap.classList.contains('show') ? 'Close Form' : 'Reserve a Table';
+      var isOpen = restFormWrap.classList.toggle('show');
+      restToggle.textContent = isOpen ? 'Close Form' : 'Reserve a Table';
+      restToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
   }
   var restForm = document.getElementById('restaurantReservationForm');
   if (restForm) {
+    var dateField = document.getElementById('rfDate');
+    if (dateField) dateField.min = new Date().toISOString().slice(0, 10);
     restForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = document.getElementById('rfName').value.trim();

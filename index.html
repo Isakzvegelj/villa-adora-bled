@@ -38,7 +38,7 @@
         "telephone": "+38651603858",
         "email": "evita.vilebled@gmail.com",
         "priceRange": "€180–€620",
-        "description": "A butique luxury hotel on the shore of Lake Bled, Slovenia. Historic villa from 1878 with seven elegant suites, lakeside dining and warm hospitality.",
+        "description": "A boutique luxury hotel on the shore of Lake Bled, Slovenia. Historic villa from 1878 with eight elegant suites, lakeside dining and warm hospitality.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Cesta svobode 35",
@@ -61,13 +61,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="#suites" class="skip-link">Skip to content</a>
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
     <!-- ============ NAV ============ -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#top" class="brand">ADORA</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
@@ -81,6 +81,8 @@
             </ul>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- ============ HERO ============ -->
     <header class="hero" id="top">
@@ -273,7 +275,7 @@
                     </div>
 
                 </div><!--/.carousel-track-->
-                <div class="car-dots" aria-hidden="true"></div>
+                <div class="car-dots" role="group" aria-label="Suite slides"></div>
             </div>
 
             <!-- Availability calendars (per suite, Bentral live) in a carousel like the suites -->
@@ -326,7 +328,7 @@
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                 </div><!--/.carousel-track-->
-                <div class="car-dots" aria-hidden="true"></div>
+                <div class="car-dots" role="group" aria-label="Suite availability slides"></div>
             </div>
         </div>
     </section>
@@ -367,23 +369,29 @@
                     <h3>Reserve a Table</h3>
                     <p>Chef Domen Dem&scaron;ar &middot; tasting menu ~&euro;65 &middot; wine pairing ~&euro;35 &middot; vegan &amp; gluten-free available</p>
                     <div class="dine-actions">
-                        <button type="button" class="btn btn-solid btn-sm" id="restaurantToggle">Reserve a Table</button>
-                        <a href="tel:+386****3858" class="btn btn-avail" style="text-decoration:none;display:inline-block;">Or call +386 51 603 858</a>
+                        <button type="button" class="btn btn-solid btn-sm" id="restaurantToggle" aria-controls="restaurantForm" aria-expanded="false">Reserve a Table</button>
+                        <a href="tel:+38651603858" class="btn btn-avail" style="text-decoration:none;display:inline-block;">Or call +386 51 603 858</a>
                     </div>
                     <div class="restaurant-form" id="restaurantForm">
                         <h4>Reserve at Adora Lakeside Restaurant</h4>
                         <form id="restaurantReservationForm">
                             <div class="rf-grid">
-                                <input type="text" id="rfName" placeholder="Your name" required>
-                                <input type="email" id="rfEmail" placeholder="Email" required>
-                                <input type="date" id="rfDate" required>
-                                <select id="rfTime" aria-label="Time">
+                                <label class="sr-only" for="rfName">Your name</label>
+                                <input type="text" id="rfName" name="name" placeholder="Your name" autocomplete="name" required>
+                                <label class="sr-only" for="rfEmail">Email</label>
+                                <input type="email" id="rfEmail" name="email" placeholder="Email" autocomplete="email" required>
+                                <label class="sr-only" for="rfDate">Preferred date</label>
+                                <input type="date" id="rfDate" name="date" required>
+                                <label class="sr-only" for="rfTime">Preferred time</label>
+                                <select id="rfTime">
                                     <option>12:00</option><option>13:00</option><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
                                 </select>
-                                <select id="rfGuests" aria-label="Guests">
+                                <label class="sr-only" for="rfGuests">Number of guests</label>
+                                <select id="rfGuests">
                                     <option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7 guests</option><option selected>8+ guests</option>
                                 </select>
-                                <textarea id="rfNote" placeholder="Special requests (allergies, occasion, dietary needs...)" rows="2"></textarea>
+                                <label class="sr-only" for="rfNote">Special requests</label>
+                                <textarea id="rfNote" name="note" placeholder="Special requests (allergies, occasion, dietary needs...)" rows="2"></textarea>
                             </div>
                             <div class="rf-actions">
                                 <button type="submit" class="btn btn-solid btn-sm">Send Reservation</button>
@@ -465,6 +473,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
