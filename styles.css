@@ -93,16 +93,24 @@ ul { list-style: none; }
 /* ---------- HOTEL ---------- */
 .hotel .narrow { text-align: center; }
 .hotel .narrow .lead { color: var(--ink-soft); }
-.facilities-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 70px; }
-.facilities { background: var(--ivory); border: 1px solid var(--line); padding: 46px 44px; }
-.facilities-title { font-family: var(--font-serif); font-size: 1.6rem; color: var(--green-900); margin-bottom: 20px; font-weight: 500; }
-.facilities-list li { padding: 9px 0 9px 22px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.98rem; }
-.facilities-list li::before { content: ''; position: absolute; left: 0; top: 17px; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
-.facilities-list li:last-child { border-bottom: 0; }
-.facilities-services { display: grid; gap: 26px; align-content: start; }
-.svc { background: var(--ivory); border: 1px solid var(--line); border-left: 3px solid var(--gold); padding: 22px 26px; }
-.svc-label { display: block; font-family: var(--font-serif); font-size: 1.3rem; color: var(--green-900); margin-bottom: 6px; font-weight: 500; }
-.svc p { color: var(--ink-soft); font-size: 0.96rem; }
+.facilities-wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 34px; margin-top: 70px; align-items: stretch; }
+.facilities { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--ivory) 0%, #fffdf8 100%); border: 1px solid var(--line); padding: 42px 44px 40px; box-shadow: 0 18px 50px rgba(31,61,58,0.07); }
+.facilities::after { content: ''; position: absolute; right: -72px; top: -72px; width: 190px; height: 190px; border: 1px solid rgba(179,146,44,0.25); border-radius: 50%; box-shadow: 0 0 0 18px rgba(179,146,44,0.04), 0 0 0 36px rgba(179,146,44,0.03); pointer-events: none; }
+.facilities-kicker { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 10px; font-weight: 500; }
+.facilities-title { font-family: var(--font-serif); font-size: 2rem; line-height: 1.1; color: var(--green-900); margin-bottom: 10px; font-weight: 500; }
+.facilities-intro { max-width: 440px; color: var(--ink-soft); font-size: 0.96rem; }
+.facilities-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 26px; margin-top: 28px; }
+.facilities-list li { padding: 11px 0 11px 28px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 0.92rem; }
+.facilities-list li::before { content: '✓'; position: absolute; left: 0; top: 10px; width: 18px; height: 18px; border: 1px solid var(--gold-light); border-radius: 50%; color: var(--gold); font-size: 0.68rem; line-height: 16px; text-align: center; }
+.facilities-services { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
+.services-heading { grid-column: 1 / -1; padding: 4px 0 4px; }
+.services-heading .facilities-title { margin-bottom: 0; }
+.svc { position: relative; min-height: 150px; background: var(--ivory); border: 1px solid var(--line); padding: 24px 22px 22px; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
+.svc:hover { transform: translateY(-3px); border-color: var(--gold-light); box-shadow: 0 12px 28px rgba(31,61,58,0.08); }
+.svc-index { display: block; color: var(--gold); font-size: 0.68rem; letter-spacing: 0.14em; margin-bottom: 14px; }
+.svc-label { display: block; font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.1; color: var(--green-900); margin-bottom: 8px; font-weight: 500; }
+.svc p { color: var(--ink-soft); font-size: 0.88rem; line-height: 1.55; }
+.svc p + p { margin-top: 5px; }
 
 /* ---------- SUITES carousel ---------- */
 .suites { background: var(--cream-2); }
@@ -230,4 +238,8 @@ ul { list-style: none; }
     .gallery-strip { grid-template-columns: 1fr 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .book-widget { padding: 20px; }
+    .facilities { padding: 32px 24px 28px; }
+    .facilities-list { grid-template-columns: 1fr; }
+    .facilities-services { grid-template-columns: 1fr; gap: 14px; }
+    .services-heading { grid-column: auto; }
 }
