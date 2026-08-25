@@ -50,6 +50,25 @@
   var year = document.getElementById('footerYear');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // ---------- Contact details (obfuscated to deter harvesters) ----------
+  function deobf(s) { return s.split('').reverse().join(''); }
+  var CONTACT_EMAIL = deobf('moc.liamg@delbeliv.ative');
+  var CONTACT_TEL = deobf('85830615683');
+  var CONTACT_TEL_PRETTY = '+' + CONTACT_TEL.slice(0, 3) + ' ' + CONTACT_TEL.slice(3, 5) + ' ' + CONTACT_TEL.slice(5, 8) + ' ' + CONTACT_TEL.slice(8);
+
+  document.querySelectorAll('a.js-email').forEach(function (a) {
+    var subject = a.getAttribute('data-subject');
+    a.href = 'mailto:' + CONTACT_EMAIL + (subject ? '?subject=' + encodeURIComponent(subject) : '');
+    a.textContent = CONTACT_EMAIL;
+  });
+  document.querySelectorAll('a.js-tel').forEach(function (a) {
+    a.href = 'tel:+' + CONTACT_TEL;
+    a.textContent = (a.getAttribute('data-prefix') || '') + CONTACT_TEL_PRETTY;
+  });
+  document.querySelectorAll('a.js-wa').forEach(function (a) {
+    a.href = 'https://wa.me/' + CONTACT_TEL;
+  });
+
   // ---------- Carousels (suites + availability + any .carousel) ----------
   var GAP = 26;
 
@@ -159,7 +178,7 @@
       if (!name || !email || !date) return;
       var subject = 'Dinner reservation - ' + name + ' - ' + date + ' ' + time + ' - ' + guests;
       var body = 'Name: ' + name + '\nEmail: ' + email + '\nDate: ' + date + '\nTime: ' + time + '\nGuests: ' + guests + '\nNote: ' + (note || '-');
-      window.location.href = 'mailto:evita.vilebled@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       var ok = document.createElement('p');
       ok.className = 'rf-note';
       ok.style.color = 'var(--green-600)';
