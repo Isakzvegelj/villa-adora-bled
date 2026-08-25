@@ -1,6 +1,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+._*
 
 # Local preview/server output
 *.log
