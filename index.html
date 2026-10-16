@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script>
+      /* Force HTTPS. GitHub Pages serves this site over http:// as well, and the
+         "Book Direct" link on adorabled.com pointed at the http:// address, so guests
+         landed on a page their browser marked "Not secure" right before entering
+         personal and card details. This redirects them immediately. */
+      if (location.protocol === 'http:') {
+        location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1f3d3a">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -76,7 +85,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#dining">Dining</a></li>
                 <li><a href="#location">Location</a></li>
-                <li><a href="#contact" class="nav-cta">Book Now</a></li>
+                <li><a href="#book" class="nav-cta">Book Now</a></li>
             </ul>
         </div>
     </nav>
@@ -299,42 +308,42 @@
                 <div class="carousel-track">
                     <div class="avail-card" data-room="princess">
                         <h4 class="avail-name">Princess Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e44634d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e44634d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="luxury">
                         <h4 class="avail-name">Luxury Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e44674d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e44674d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="penthouse">
                         <h4 class="avail-name">Penthouse Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e446b4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e446b4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="swan">
                         <h4 class="avail-name">Swan Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54494d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e54494d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="superior">
                         <h4 class="avail-name">Superior Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e544d4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e544d4d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="prestige">
                         <h4 class="avail-name">Prestige Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54454d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e54454d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="deluxe">
                         <h4 class="avail-name">Deluxe Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54514d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e54514d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                     <div class="avail-card" data-room="island">
                         <h4 class="avail-name">Island Suite</h4>
-                        <div class="bentral-widget"><script src="//www.bentral.com/service/embed/calendar.js?uid=5f5441314e54414d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
+                        <div class="bentral-widget"><script src="https://www.bentral.com/service/embed/calendar.js?uid=5f5441314e54414d&last=true&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script></div>
                         <a href="#book" class="btn btn-solid btn-sm btn-full">Book This Suite</a>
                     </div>
                 </div><!--/.carousel-track-->
@@ -350,7 +359,7 @@
             <h2 class="serif-title">Special rates &amp; <em>moments</em></h2>
             <p class="lead center">We love to create special offers for you and ensure you the best service and unforgettable moments. Live rates for every suite and season.</p>
             <div class="bentral-widget prices">
-                <script src="//www.bentral.com/service/embed/price-list.js?id=5f444d354f415f4e&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
+                <script src="https://www.bentral.com/service/embed/price-list.js?id=5f444d354f415f4e&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
             </div>
         </div>
     </section>
@@ -468,7 +477,7 @@
             <p class="lead center">Reserve directly for the best available rates &mdash; no booking fees, and we confirm personally by email or phone.</p>
             <div class="book-grid" id="book">
                 <div class="book-widget bentral-widget">
-                    <script src="//www.bentral.com/service/embed/booking.js?id=5f444d354f415f4e&width=full&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
+                    <script src="https://www.bentral.com/service/embed/booking.js?id=5f444d354f415f4e&width=full&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
                 </div>
                 <div class="book-info">
                     <h3>We love to hear from you</h3>
