@@ -50,6 +50,15 @@
   var year = document.getElementById('footerYear');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Do not cover booking-form controls with a link to the form already on screen.
+  var mobileBook = document.querySelector('.mobile-book');
+  var bookingSection = document.getElementById('book');
+  if (mobileBook && bookingSection && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      mobileBook.hidden = entries[0].isIntersecting;
+    }, { rootMargin: '-76px 0px -80px 0px' }).observe(bookingSection);
+  }
+
   // ---------- Contact details (obfuscated to deter harvesters) ----------
   function deobf(s) { return s.split('').reverse().join(''); }
   var CONTACT_EMAIL = deobf('moc.liamg@delbeliv.ative');
@@ -70,8 +79,6 @@
   });
 
   // ---------- Carousels (suites + availability + any .carousel) ----------
-  var GAP = 26;
-
   function initCarousel(carousel) {
     var track = carousel.querySelector('.carousel-track');
     if (!track) return;
@@ -83,7 +90,8 @@
 
     function cardStep() {
       var c = track.children[0];
-      return c ? c.offsetWidth + GAP : 320;
+      var gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      return c ? c.offsetWidth + gap : 320;
     }
 
     if (dotsWrap) {

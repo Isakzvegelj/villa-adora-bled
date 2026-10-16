@@ -7,34 +7,35 @@
          "Book Direct" link on adorabled.com pointed at the http:// address, so guests
          landed on a page their browser marked "Not secure" right before entering
          personal and card details. This redirects them immediately. */
-      if (location.protocol === 'http:') {
+      if (location.protocol === 'http:' && location.hostname === 'book.adorabled.com') {
         location.replace('https://' + location.host + location.pathname + location.search + location.hash);
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1f3d3a">
+    <script src="theme.js"></script>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    <title>ADORA — Luxury Hotel on Lake Bled | Villa Adora</title>
-    <meta name="description" content="ADORA is a boutique luxury hotel on the shore of Lake Bled, Slovenia. A historic villa from 1878 with elegant suites, lakeside dining and warm hospitality. Book direct for the best rates.">
+    <title>Book Villa Adora Bled | Suites &amp; Availability</title>
+    <meta name="description" content="Check suite availability and rates at Villa Adora on Lake Bled. Compare eight individually designed suites and reserve directly with the hotel.">
     <meta property="og:title" content="ADORA — Luxury Hotel on the Shore of Lake Bled">
-    <meta property="og:description" content="A boutique luxury hotel on the shore of magnificent Lake Bled. Elegant suites, lakeside dining and unforgettable moments. Book direct for the best rates.">
+    <meta property="og:description" content="A boutique luxury hotel on the shore of magnificent Lake Bled. Elegant suites, lakeside dining and unforgettable moments. Check availability and reserve directly with Villa Adora.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://book.adorabled.com/">
     <meta property="og:site_name" content="ADORA · Villa Adora Bled">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://book.adorabled.com/assets/images/hero-hotel.jpg">
-    <meta property="og:image:width" content="2000">
-    <meta property="og:image:height" content="1100">
+    <meta property="og:image:width" content="3840">
+    <meta property="og:image:height" content="2160">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ADORA — Luxury Hotel on the Shore of Lake Bled">
-    <meta name="twitter:description" content="A boutique luxury hotel on the shore of magnificent Lake Bled. Book direct for the best rates.">
+    <meta name="twitter:description" content="A boutique luxury hotel on the shore of magnificent Lake Bled. Check availability and reserve directly with Villa Adora.">
     <meta name="twitter:image" content="https://book.adorabled.com/assets/images/hero-hotel.jpg">
     <link rel="canonical" href="https://book.adorabled.com/">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="preload" as="image" href="assets/images/hero-hotel.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/optimized/hero-1920.webp" imagesrcset="assets/images/optimized/hero-960.webp 960w, assets/images/optimized/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
     <link rel="preconnect" href="https://www.bentral.com" crossorigin>
     <script type="application/ld+json">
     {
@@ -75,9 +76,6 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#top" class="brand">ADORA</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hotel">Hotel</a></li>
                 <li><a href="#suites">Suites</a></li>
@@ -87,6 +85,14 @@
                 <li><a href="#location">Location</a></li>
                 <li><a href="#book" class="nav-cta">Book Now</a></li>
             </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Night mode" hidden>
+                    <span class="theme-track" aria-hidden="true"><span class="theme-sun">☀</span><span class="theme-moon">☾</span><span class="theme-thumb"></span></span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
     <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
@@ -95,7 +101,7 @@
 
     <!-- ============ HERO ============ -->
     <header class="hero" id="top">
-        <img class="hero-bg" src="assets/images/hero-hotel.jpg" alt="Villa Adora — luxury hotel on the shore of Lake Bled" fetchpriority="high" decoding="async">
+        <img class="hero-bg" src="assets/images/optimized/hero-1920.webp" srcset="assets/images/optimized/hero-960.webp 960w, assets/images/optimized/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1080" alt="Villa Adora beside Lake Bled, with Bled Castle across the lake" fetchpriority="high" decoding="async">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="hero-eyebrow">Bled &middot; Slovenia</p>
@@ -110,6 +116,31 @@
         <div class="hero-scroll"><span>Scroll</span><i></i></div>
     </header>
 
+    <!-- ============ BOOK / CONTACT ============ -->
+    <section class="section contact" id="book" aria-labelledby="booking-title">
+        <div class="container">
+            <p class="kicker">BOOK DIRECT WITH VILLA ADORA</p>
+            <h2 class="serif-title" id="booking-title">Find your <em>stay</em></h2>
+            <p class="lead center">Choose your dates and guests to check availability and rates. Review the payment and cancellation terms for your selected rate before reserving.</p>
+            <div class="book-grid">
+                <div class="book-widget bentral-widget">
+                    <script src="https://www.bentral.com/service/embed/booking.js?id=5f444d354f415f4e&width=full&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
+                    <noscript><p>Enable JavaScript to use the booking form, or contact Villa Adora using the details alongside it.</p></noscript>
+                </div>
+                <div class="book-info" id="contact">
+                    <h3>Need help choosing a suite?</h3>
+                    <p>Contact Villa Adora for room questions, special requests or help with your dates.</p>
+                    <ul class="contact-list">
+                        <li><span>Email</span> <a href="mailto:evita.vilebled@gmail.com" class="js-email" data-email-rev="moc.liamg@delbeliv.ative" data-subject="Booking inquiry">Email Villa Adora</a></li>
+                        <li><span>Call</span> <a href="tel:+38651603858" class="js-tel" data-tel-rev="85830615683">+386 51 603 858</a></li>
+                        <li><span>Address</span> Cesta svobode 35, 4260 Bled, Slovenia</li>
+                    </ul>
+                    <a class="btn btn-wa js-wa" href="https://wa.me/38651603858" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ HOTEL ============ -->
     <section class="section hotel" id="hotel">
         <div class="container narrow">
@@ -120,6 +151,34 @@
         </div>
 
         <div class="container">
+            <div class="photo-story" id="new-photos" aria-labelledby="photo-story-title">
+                <p class="kicker">A CLOSER LOOK</p>
+                <h3 class="serif-title" id="photo-story-title">Inside <em>Adora</em></h3>
+                <div class="photo-story-grid">
+                    <figure class="photo-story-main">
+                        <a href="assets/images/new/NZR_1771-1800.webp" target="_blank" rel="noopener" aria-label="Open larger bedroom photograph in a new tab">
+                            <img src="assets/images/new/NZR_1771-1200.webp" srcset="assets/images/new/NZR_1771-600.webp 600w, assets/images/new/NZR_1771-1200.webp 1200w, assets/images/new/NZR_1771-1800.webp 1800w" sizes="(max-width: 700px) calc(100vw - 40px), 65vw" width="1200" height="800" alt="Adora bedroom with a white bed, red patterned rugs, chandelier and arched bathroom entrance" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption>Individual character, thoughtful details.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="assets/images/new/NZR_1792-1800.webp" target="_blank" rel="noopener" aria-label="Open larger bedroom and balcony photograph in a new tab">
+                            <img src="assets/images/new/NZR_1792-600.webp" srcset="assets/images/new/NZR_1792-600.webp 600w, assets/images/new/NZR_1792-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 40px), 32vw" width="600" height="400" alt="Bedroom with a gilt mirror, chandelier and views of Lake Bled through the window and balcony door" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption>A glimpse of the lake.</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="assets/images/new/NZR_1807-1800.webp" target="_blank" rel="noopener" aria-label="Open larger bathroom photograph in a new tab">
+                            <img src="assets/images/new/NZR_1807-600.webp" srcset="assets/images/new/NZR_1807-600.webp 600w, assets/images/new/NZR_1807-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 40px), 32vw" width="600" height="400" alt="Bathroom with a corner bathtub, dark stone walls and towels, beside an ornate mirror and wooden table" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption>A closer look at the bathroom.</figcaption>
+                    </figure>
+                </div>
+                <div class="tour-link-panel">
+                    <div><h4>Room B &middot; a 360&deg; look inside</h4><p>Explore the interactive room panorama in a separate tab.</p></div>
+                    <a class="btn-avail" href="https://momento360.com/e/uc/62a1edc6e44e402f8b51e489626fbe62" target="_blank" rel="noopener noreferrer">Open 360&deg; view <span class="sr-only">in a new tab</span></a>
+                </div>
+            </div>
             <div class="facilities-wrap">
                 <div class="facilities">
                     <p class="facilities-kicker">AT A GLANCE</p>
@@ -170,7 +229,7 @@
         <div class="container">
             <p class="kicker">SUITES</p>
             <h2 class="serif-title">Eight individually designed <em>suites</em></h2>
-            <p class="lead center">Elegant suites with views overlooking the beautiful Lake Bled and its sights. Check live availability and book directly &mdash; best rates, no booking fees.</p>
+            <p class="lead center">Elegant suites with views overlooking the beautiful Lake Bled and its sights. Explore the suites, check availability for your dates and reserve directly with Villa Adora.</p>
 
             <div class="carousel">
                 <button type="button" class="car-arrow prev" aria-label="Previous suite">
@@ -182,7 +241,7 @@
                 <div class="carousel-track">
 
                     <div class="suite-card" data-room="princess">
-                        <div class="suite-imgwrap"><img src="assets/images/real/princess-suite.jpg" alt="Princess Suite — tower view over Lake Bled" loading="lazy" decoding="async"><span class="suite-badge">Tower View</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/princess-suite.webp" width="800" height="533" alt="Princess Suite — tower view over Lake Bled" loading="lazy" decoding="async"><span class="suite-badge">Tower View</span></div>
                         <div class="suite-body">
                             <h3>Princess Suite</h3>
                             <p class="suite-meta">55 m&sup2; &middot; Lake view &middot; Sleeps 2</p>
@@ -196,7 +255,7 @@
                     </div>
 
                     <div class="suite-card" data-room="luxury">
-                        <div class="suite-imgwrap"><img src="assets/images/real/luxury-suite.jpg" alt="Luxury Suite at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Lake View</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/luxury-suite.webp" width="800" height="932" alt="Luxury Suite at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Lake View</span></div>
                         <div class="suite-body">
                             <h3>Luxury Suite</h3>
                             <p class="suite-meta">55 m&sup2; &middot; Balcony &middot; Sleeps 2</p>
@@ -210,7 +269,7 @@
                     </div>
 
                     <div class="suite-card" data-room="penthouse">
-                        <div class="suite-imgwrap"><img src="assets/images/real/penthouse-suite.jpg" alt="Penthouse Suite with panoramic Lake Bled views" loading="lazy" decoding="async"><span class="suite-badge">Two Floors</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/penthouse-suite.webp" width="800" height="533" alt="Penthouse Suite with panoramic Lake Bled views" loading="lazy" decoding="async"><span class="suite-badge">Two Floors</span></div>
                         <div class="suite-body">
                             <h3>Penthouse Suite</h3>
                             <p class="suite-meta">60 m&sup2; &middot; Two floors &middot; Sleeps 2&ndash;3</p>
@@ -224,7 +283,7 @@
                     </div>
 
                     <div class="suite-card" data-room="swan">
-                        <div class="suite-imgwrap"><img src="assets/images/real/swan-suite.jpg" alt="Swan Suite with Lake Bled view" loading="lazy" decoding="async"><span class="suite-badge">Elegant</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/swan-suite.webp" width="800" height="600" alt="Swan Suite with Lake Bled view" loading="lazy" decoding="async"><span class="suite-badge">Elegant</span></div>
                         <div class="suite-body">
                             <h3>Swan Suite</h3>
                             <p class="suite-meta">58 m&sup2; &middot; Lake view &middot; Sleeps 2</p>
@@ -238,7 +297,7 @@
                     </div>
 
                     <div class="suite-card" data-room="superior">
-                        <div class="suite-imgwrap"><img src="assets/images/real/superior-suite.jpg" alt="Superior Suite room interior at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Family</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/superior-suite.webp" width="800" height="600" alt="Superior Suite room interior at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Family</span></div>
                         <div class="suite-body">
                             <h3>Superior Suite</h3>
                             <p class="suite-meta">65 m&sup2; &middot; 2 bedrooms &middot; Sleeps 4</p>
@@ -252,7 +311,7 @@
                     </div>
 
                     <div class="suite-card" data-room="prestige">
-                        <div class="suite-imgwrap"><img src="assets/images/real/prestige-suite.jpg" alt="Prestige Suite at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Signature</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/prestige-suite.webp" width="800" height="533" alt="Prestige Suite at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Signature</span></div>
                         <div class="suite-body">
                             <h3>Prestige Suite</h3>
                             <p class="suite-meta">72 m&sup2; &middot; Ground floor &middot; Sleeps 3</p>
@@ -266,7 +325,7 @@
                     </div>
 
                     <div class="suite-card" data-room="deluxe">
-                        <div class="suite-imgwrap"><img src="assets/images/real/deluxe-suite.jpg" alt="Deluxe Suite room interior at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Romantic</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/deluxe-suite.webp" width="800" height="591" alt="Deluxe Suite room interior at Villa Adora" loading="lazy" decoding="async"><span class="suite-badge">Romantic</span></div>
                         <div class="suite-body">
                             <h3>Deluxe Suite</h3>
                             <p class="suite-meta">50 m&sup2; &middot; Lake view &middot; Sleeps 2</p>
@@ -280,7 +339,7 @@
                     </div>
 
                     <div class="suite-card" data-room="island">
-                        <div class="suite-imgwrap"><img src="assets/images/real/island-suite.jpg" alt="Island Suite with views of Bled Island" loading="lazy" decoding="async"><span class="suite-badge">Island View</span></div>
+                        <div class="suite-imgwrap"><img src="assets/images/optimized/island-suite.webp" width="800" height="600" alt="Island Suite with views of Bled Island" loading="lazy" decoding="async"><span class="suite-badge">Island View</span></div>
                         <div class="suite-body">
                             <h3>Island Suite</h3>
                             <p class="suite-meta">65 m&sup2; &middot; 2 balconies &middot; Sleeps 4</p>
@@ -469,31 +528,9 @@
         </div>
     </section>
 
-    <!-- ============ BOOK / CONTACT ============ -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <p class="kicker">BOOK NOW</p>
-            <h2 class="serif-title">Plan your <em>stay</em></h2>
-            <p class="lead center">Reserve directly for the best available rates &mdash; no booking fees, and we confirm personally by email or phone.</p>
-            <div class="book-grid" id="book">
-                <div class="book-widget bentral-widget">
-                    <script src="https://www.bentral.com/service/embed/booking.js?id=5f444d354f415f4e&width=full&key=ef32fbc68fd13b8f9e5ba7a55520e061"></script>
-                </div>
-                <div class="book-info">
-                    <h3>We love to hear from you</h3>
-                    <p>For questions, special requests or group bookings, reach us any time.</p>
-                    <ul class="contact-list">
-                        <li><span>Email</span> <a href="#contact" class="js-email" data-email-rev="moc.liamg@delbeliv.ative" data-subject="Booking inquiry">Email us</a></li>
-                        <li><span>Call / WhatsApp</span> <a href="#contact" class="js-tel" data-tel-rev="85830615683">Call us</a></li>
-                        <li><span>Address</span> Cesta svobode 35, 4260 Bled, Slovenia</li>
-                    </ul>
-                    <a class="btn btn-wa js-wa" href="#contact" target="_blank" rel="noopener">Chat on WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     </main>
+
+    <a class="mobile-book" href="#book">Check availability &amp; rates</a>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
